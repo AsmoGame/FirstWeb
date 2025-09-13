@@ -1,0 +1,66 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    position: relative; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://i.ytimg.com/vi/X1M9wQVB5bA/maxresdefault.jpg');
+}
+
+/* Título */
+.title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 50px;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 100px;
+    color: #fbfbfb;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 8px;
+    text-shadow: 5px 5px 6px rgba(4, 54, 181, 0.692);
+}
+
+
+
+/* Contenedor de los botones en columna */
+.buttons {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;   /* 🔥 coloca los botones en columna */
+  gap: 20px;                /* espacio entre botones */
+  align-items: center;      /* centrado horizontal */
+  margin-top: 40px;         /* separación desde el título */    /* separación del título */
+}
+
+/* Estilos de cada botón */
+.btn {
+  padding: 16px 28px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  
+  border: 3px solid #08F7FF; /* borde azul */
+  background: #004452;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px #08F7FF;
+  transition: all .25s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 280px;   /* 🔥 todos los botones mismo ancho */
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    background: #04698C;
+    color: #f6f0f0;
+    border-color: #033540;
+}

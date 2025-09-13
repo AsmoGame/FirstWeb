@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/basedatajeager.css">
+    <title>DATA BASE JAEGERS</title>
+</head>
+<body class="holo-bg">
+    <header>
+        <div class="ppdc">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.TwamQxK-jFedRLJZZLxZpQHaIY?rs=1&pid=ImgDetMain&o=7&rm=3" class="logo-img" alt="Logo PPDC">
+            <div class="titles">
+                <h1>DATABASE JAEGERS</h1>
+                <small>PAN PACIFIC DEFENSE CORPS</small>
+            </div>
+        </div>
+        <div class="actions">
+            <a class="btn" href="/index.html">Inicio</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel"></div>
+        </div>
+        <div class="controls">
+            <button class="carousel-btn" id="prev">⟨</button>
+            <button class="carousel-btn" id="next">⟩</button>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="scrim" id="scrim"></div>
+        <div class="dialog">
+            <button class="closeX" id="closeX">✕</button>
+            <h4 id="modalTitle">Acceso restringido</h4>
+            <div class="hr"></div>
+            <div class="row">
+                <input id="codeInput" type="password" placeholder="INGRESE CÓDIGO DEL JAEGER" autocomplete="off" />
+                <button class="btn" id="btnValidar">Validar</button>
+            </div>
+            <div class="err" id="err"></div>
+            <div class="details" id="details" hidden></div>
+        </div>
+    </div>
+
+    <script src="../JS/databasejeager.js"></script>
+</body>
+</html>

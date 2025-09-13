@@ -1,0 +1,260 @@
+:root {
+  --bg1: #08111a;
+  --bg2: #0a1e2f;
+  --acc: #00f6ff;
+  --acc2: #ff5e5e;
+  --ink: #dffbff;
+  --card: #0a1620cc;
+  --bdr: #00f6ff;
+  --shadow: 0 0 25px rgba(0, 246, 255, 0.35);
+  --badge: #0cc;
+  --btn: #013b41;
+  --bg-url: url("https://images.squarespace-cdn.com/content/v1/54f09436e4b0d7862a96e374/1524020555407-TK2TLNJLCXYMMC6C25FB/PR2_024_FRAME3_v01_JB_2K.jpg");
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Orbitron", system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial;
+  color: var(--ink);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.holo-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: screen;
+  opacity: 0.25;
+  filter: contrast(1.1) brightness(1.15) hue-rotate(170deg) saturate(1.2);
+  animation: drift 24s linear infinite alternate;
+  pointer-events: none;
+  z-index: -2;
+}
+@keyframes drift {
+  0% {
+    transform: scale(1.05) translateY(-2%);
+  }
+  100% {
+    transform: scale(1.1) translateY(2%);
+  }
+}
+
+header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent);
+  z-index: 5;
+}
+.ppdc {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.titles h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  color: var(--acc);
+}
+.titles small {
+  opacity: 0.8;
+  letter-spacing: 0.18rem;
+}
+.actions .btn {
+  border: 1px solid var(--bdr);
+  background: var(--btn);
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.actions .btn:hover {
+  filter: brightness(1.15);
+}
+
+main {
+  padding: 26px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel-container {
+  position: relative;
+  perspective: 1500px;
+  width: 100%;
+  max-width: 1000px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.carousel {
+  width: 400px;
+  height: 280px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.card {
+  background: var(--card);
+  border: 2px solid var(--bdr);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 14px;
+}
+.card .thumb {
+  height: 140px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+  width: 100%;
+}
+.card .thumb img {
+  max-width: 92%;
+  max-height: 120px;
+  filter: drop-shadow(0 0 10px var(--acc));
+}
+.card h3 {
+  margin: 10px 0 4px;
+  text-align: center;
+}
+.badge {
+  font-family: "Staatliches";
+  font-size: 0.9rem;
+  color: #001;
+  background: var(--badge);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+.meta {
+  margin: 6px 0 10px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-align: center;
+}
+.controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.carousel-btn {
+  background: var(--btn);
+  color: var(--ink);
+  border: 1px solid var(--bdr);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal.show {
+  display: flex;
+}
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+.dialog {
+  position: relative;
+  width: min(520px, 92vw);
+  background: var(--card);
+  border: 2px solid var(--bdr);
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(0, 246, 255, 0.35);
+  padding: 18px 16px 16px;
+  z-index: 2;
+}
+.dialog h4 {
+  margin: 0 0 8px;
+  color: var(--acc);
+}
+.hr {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bdr), transparent);
+  margin: 10px 0 14px;
+}
+.closeX {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.details {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+input[type="password"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--bdr);
+  background: #0009;
+  color: var(--ink);
+  font-family: inherit;
+  letter-spacing: 0.2rem;
+}
+.err {
+  color: var(--acc2);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
